@@ -86,7 +86,7 @@ const App = () => {
           <Route path="/borrow-book" element={isLoggedIn && userRole === 'user' ? <BorrowBook /> : <Login handleLogin={handleLogin} />} />
           <Route path="/return-book/:id" element={isLoggedIn && userRole === 'user' ? <ReturnBook /> : <Login handleLogin={handleLogin} />} />
           <Route path="/overdue-books" element={isLoggedIn && userRole === 'user' ? <OverdueBooks /> : <Login handleLogin={handleLogin} />} />
-          <Route path="*" element={<Homepage />} /> {/* Render homepage for all unknown routes */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
