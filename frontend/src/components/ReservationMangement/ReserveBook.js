@@ -14,7 +14,7 @@ function ReserveBook(){
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:6001/api/reservations', {
+      await axios.post('https://capstone-projects-yw06.onrender.com/api/reservations', {
         bookId,
         userId
       }, {

@@ -13,7 +13,7 @@ function ReturnBook(){
     setSuccess(null);
 
     try {
-      await axios.put(`http://localhost:6001/api/borrowing/return/${borrowedId}`, {}, {
+      await axios.put(`https://capstone-projects-yw06.onrender.com/api/borrowing/return/${borrowedId}`, {}, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       setSuccess('Book returned successfully!');

@@ -10,7 +10,7 @@ function OverdueBooks() {
   useEffect(() => {
     const fetchOverdueBooks = async () => {
       try {
-        const response = await axios.get('http://localhost:6001/api/borrowings/overdue', {
+        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/borrowings/overdue', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         setOverdueBooks(response.data);

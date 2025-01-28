@@ -16,7 +16,7 @@ function BorrowBook() {
 
     try {
       const token = localStorage.getItem('token');
-       await axios.post('http://localhost:6001/api/borrowing/borrow', {
+       await axios.post('https://capstone-projects-yw06.onrender.com/api/borrowing/borrow', {
         bookId,
         userId,
         dueDate

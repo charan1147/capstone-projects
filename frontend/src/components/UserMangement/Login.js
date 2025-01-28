@@ -16,7 +16,7 @@ function Login({ handleLogin }){
     setSuccess(null);
 
     try {
-      const response = await axios.post('http://localhost:6001/api/users/login', {
+      const response = await axios.post('https://capstone-projects-yw06.onrender.com/api/users/login', {
         email,
         password,
       });

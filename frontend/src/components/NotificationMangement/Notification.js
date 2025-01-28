@@ -10,7 +10,7 @@ function Notifications(){
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('http://localhost:6001/api/notifications', {
+        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/notifications', {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
         setNotifications(response.data.notifications);

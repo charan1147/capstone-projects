@@ -11,7 +11,7 @@ function UserReservations() {
     const fetchReservations = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:6001/api/reservations/user', {
+        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/reservations/user', {
           headers: { 'x-auth-token': token }
         });
         setReservations(response.data.reservations);
@@ -28,7 +28,7 @@ function UserReservations() {
   const handleCancel = async (reservationId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:6001/api/reservations/${reservationId}`, {
+      await axios.delete(`https://capstone-projects-yw06.onrender.com/api/reservations/${reservationId}`, {
         headers: { 'x-auth-token': token }
       });
       setSuccess('Reservation canceled successfully.');

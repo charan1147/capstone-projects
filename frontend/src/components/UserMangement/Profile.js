@@ -8,7 +8,7 @@ function  Profile(){
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:6001/api/users/profile', {
+        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/users/profile', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         }); 
         setProfile(response.data.user); 
