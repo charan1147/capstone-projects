@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-
 function Login({ handleLogin }){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,6 +52,7 @@ function Login({ handleLogin }){
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
+            autoComplete="username"
           />
         </div>
         <div className="form-group">
@@ -64,12 +64,13 @@ function Login({ handleLogin }){
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
+            autoComplete="current-password"
           />
         </div>
         <button className="btn" type="submit">Login</button>
       </form>
     </div>
   );
-};
+}
 
 export default Login;
