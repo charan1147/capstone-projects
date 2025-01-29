@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { borrowBook, returnBook, getOverdueBooks } = require('../controllers/BorrowedController');
-const { isAuthenticated, isAdmin } = require('../middleware/authController');
+const { borrowBook, getUserBorrowedBooks, getAllBorrowedBooks, returnBook, getOverdueBooks } = require('../controllers/BorrowedController');
 
-router.post('/borrow', isAuthenticated, borrowBook);
-router.put('/return/:id', isAuthenticated, returnBook);
-router.get('/overdue', isAuthenticated, isAdmin, getOverdueBooks);
+router.post('/borrow', borrowBook);
+router.put('/return/:id', returnBook);
+router.get('/overdue', getOverdueBooks);
+router.get('/user', getUserBorrowedBooks); 
+router.get('/all', getAllBorrowedBooks); 
 
 module.exports = router;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './UserReservation.css'
 
 function UserReservations() {
   const [reservations, setReservations] = useState([]);
@@ -46,11 +47,13 @@ function UserReservations() {
       {success && <div className="alert alert-success">{success}</div>}
       <ul className="reservation-list">
         {reservations.map(reservation => (
-          <li key={reservation._id} className="reservation-item">
-            <div><strong>Book Title:</strong> {reservation.book.title}</div>
-            <div><strong>Reservation Date:</strong> {new Date(reservation.dueDate).toLocaleDateString()}</div>
-            <button className="btn btn-cancel" onClick={() => handleCancel(reservation._id)}>Cancel Reservation</button>
-          </li>
+          reservation && reservation.book ? (
+            <li key={reservation._id} className="reservation-item">
+              <div><strong>Book Title:</strong> {reservation.book.title}</div>
+              <div><strong>Reservation Date:</strong> {new Date(reservation.dueDate).toLocaleDateString()}</div>
+              <button className="btn btn-cancel" onClick={() => handleCancel(reservation._id)}>Cancel Reservation</button>
+            </li>
+          ) : null
         ))}
       </ul>
     </div>

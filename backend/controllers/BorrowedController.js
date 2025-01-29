@@ -20,6 +20,32 @@ exports.borrowBook = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
 };
+exports.getUserBorrowedBooks = async (req, res) => {
+  const userId = req.user.id;
+  try {
+    const borrowedBooks = await Borrowing.find({ userId }).populate('bookId');
+    if (!borrowedBooks.length) {
+      return res.status(404).json({ message: 'No borrowed books found for this user.' });
+    }
+    res.status(200).json({ borrowedBooks });
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error', error: error.message });
+  }
+};
+
+exports.getAllBorrowedBooks = async (req, res) => {
+  try {
+    const allBorrowedBooks = await Borrowing.find().populate('bookId').populate('userId');
+    if (!allBorrowedBooks.length) {
+      return res.status(404).json({ message: 'No borrowed books found.' });
+    }
+    res.status(200).json({ allBorrowedBooks });
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error', error: error.message });
+  }
+};
+
+
 
 exports.returnBook = async (req, res) => {
   const { id } = req.params;

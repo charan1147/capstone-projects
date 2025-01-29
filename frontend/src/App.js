@@ -22,7 +22,7 @@ import ViewReservations from './components/ReservationMangement/ViewReservation'
 import UserReservations from './components/ReservationMangement/UserResrvation';
 import { ProtectedAdminDashboard, ProtectedUserDashboard } from './components/UserMangement/ProtectedRoutes';
 
-const App = () => {
+function App(){
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState('');
 
