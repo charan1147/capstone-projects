@@ -16,7 +16,7 @@ function ReturnBook() {
           return;
         }
         console.log('Fetching borrowed books...');
-        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/borrowing/user', {
+        const response = await axios.get('https://capstone-projects-1.onrender.com/api/borrowing/user', {
           headers: { 'x-auth-token': token }
         });
         console.log('Borrowed books fetched:', response.data.borrowedBooks);
@@ -35,7 +35,7 @@ function ReturnBook() {
     setSuccess(null);
 
     try {
-      await axios.put(`https://capstone-projects-yw06.onrender.com/api/borrowing/return/${borrowedId}`, {}, {
+      await axios.put(`https://capstone-projects-1.onrender.com/api/borrowing/return/${borrowedId}`, {}, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       setSuccess('Book returned successfully!');

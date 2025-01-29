@@ -13,7 +13,7 @@ function DeleteBookPage() {
       setLoading(true);
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/books/view', {
+        const response = await axios.get('https://capstone-projects-1.onrender.com/api/books/view', {
           headers: {
             'x-auth-token': token
         }
@@ -36,7 +36,7 @@ function DeleteBookPage() {
     setSuccess(null);
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`https://capstone-projects-yw06.onrender.com/api/books/delete/${id}`, {
+      await axios.delete(`https://capstone-projects-1.onrender.com/api/books/delete/${id}`, {
         headers: {
           'x-auth-token': token
         }

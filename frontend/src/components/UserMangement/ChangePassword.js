@@ -16,7 +16,7 @@ function ChangePassword(){
     try {
       const token = localStorage.getItem('token');
 
-      await axios.put('https://capstone-projects-yw06.onrender.com/api/users/password', {
+      await axios.put('https://capstone-projects-1.onrender.com/api/users/password', {
         oldPassword,
         newPassword
       }, {

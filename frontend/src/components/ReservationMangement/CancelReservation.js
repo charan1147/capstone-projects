@@ -26,7 +26,7 @@ function CancelReservation(){
         return;
       }
 
-      await axios.delete(`https://capstone-projects-yw06.onrender.com/api/reservations/${reservationId}`, {
+      await axios.delete(`https://capstone-projects-1.onrender.com/api/reservations/${reservationId}`, {
         headers: { 'x-auth-token': token }
       });
 

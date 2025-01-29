@@ -18,7 +18,7 @@ function UserDashboard(){
       }
 
       try {
-        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/users/me', {
+        const response = await axios.get('https://capstone-projects-1.onrender.com/api/users/me', {
           headers: {
             'x-auth-token': token,
           },

@@ -15,7 +15,7 @@ function Register() {
     setSuccess(null);
 
     try {
-      await axios.post('https://capstone-projects-yw06.onrender.com/api/users/register', { name, email, password });
+      await axios.post('https://capstone-projects-1.onrender.com/api/users/register', { name, email, password });
       setSuccess('User registered successfully!');
       setName('');
       setEmail('');

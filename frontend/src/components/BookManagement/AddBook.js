@@ -30,7 +30,7 @@ function AddBook() {
   const token = localStorage.getItem('token');
 
     try {
-      await axios.post('https://capstone-projects-yw06.onrender.com/api/books/add', bookData, {
+      await axios.post('https://capstone-projects-1.onrender.com/api/books/add', bookData, {
         headers: {
           'x-auth-token': token
         }

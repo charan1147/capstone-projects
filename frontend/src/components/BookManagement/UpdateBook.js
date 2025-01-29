@@ -23,7 +23,7 @@ function UpdateBook(){
       setLoading(true);
       const token = localStorage.getItem('token');
       try {
-        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/books/view', {
+        const response = await axios.get('https://capstone-projects-1.onrender.com/api/books/view', {
           headers: {
             'x-auth-token': token
           }
@@ -44,7 +44,7 @@ function UpdateBook(){
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get(`https://capstone-projects-yw06.onrender.com/api/books/view/${id}`, {
+      const response = await axios.get(`https://capstone-projects-1.onrender.com/api/books/view/${id}`, {
         headers: {
           'x-auth-token': token
         }
@@ -71,7 +71,7 @@ function UpdateBook(){
     setSuccess(null);
     const token = localStorage.getItem('token');
     try {
-         await axios.put(`https://capstone-projects-yw06.onrender.com/api/books/update/${selectedBookId}`, book, {
+         await axios.put(`https://capstone-projects-1.onrender.com/api/books/update/${selectedBookId}`, book, {
         headers: {
           'x-auth-token': token
         }

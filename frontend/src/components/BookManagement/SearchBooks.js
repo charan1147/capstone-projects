@@ -9,7 +9,7 @@ function SearchBooks({ term, filter }) {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/books/view');
+        const response = await axios.get('https://capstone-projects-1.onrender.com/api/books/view');
         setBooks(response.data.books);
         setError(null);
       } catch (error) {

@@ -28,7 +28,7 @@ function App(){
 
   const fetchUserDetails = useCallback(async () => {
     try {
-      const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/users/me');
+      const response = await axios.get('https://capstone-projects-1.onrender.com/api/users/me');
       console.log('User Details:', response.data);
       setIsLoggedIn(true);
       setUserRole(response.data.role);

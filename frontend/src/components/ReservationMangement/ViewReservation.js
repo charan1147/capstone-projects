@@ -10,7 +10,7 @@ function AdminReservations() {
     const fetchReservations = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://capstone-projects-yw06.onrender.com/api/reservations', {
+        const response = await axios.get('https://capstone-projects-1.onrender.com/api/reservations', {
           headers: { 'x-auth-token': token }
         });
         console.log('API Response:', response.data);
